@@ -1,0 +1,100 @@
+* {
+    preenchimento :  0 ;
+    margem :  0 ;
+    cor :  # 181818 ;
+    font-family :  'Oxanium' , sem serifa;
+    contorno : nenhum;
+    cor de fundo : nenhuma;
+}
+
+html {
+    comportamento de rolagem : suave;
+}
+
+:: -webkit-barra de rolagem {
+    largura :  10px ; _
+}
+
+:: -webkit-scrollbar-track {
+    cor de fundo :  # 181818 ;
+}
+
+:: -webkit-barra de rolagem-thumb {
+    cor de fundo :  # 00AC4D ;
+}
+
+. cabeçalho {
+    cor de fundo :  # FFFFFF ;
+    exibição : flexível;
+    justificar-conteúdo : espaçar uniformemente;
+    align-items : centro;
+    preenchimento :  10px ; _
+    posição : fixo;
+    largura :  100 % ;
+    raio da borda :  0  0  10 px  10 px ;
+    índice z :  10000000 ;
+}
+
+. logotipo {
+    largura :  20 % ;
+    exibição : flexível;
+    align-items : centro;
+    justificar-conteúdo : centro;
+}
+
+. nav_home {
+    largura :  40 % ;
+    exibição : flexível;
+    justificar-conteúdo : centro;
+    align-items : centro;
+}
+
+ul {
+    exibição : flexível;
+    flex-direction : linha;
+    tipo de estilo de lista : nenhum;
+    estouro : oculto;
+}
+
+um {
+    cor :  # 181818 ;
+    text-align : centro;
+    preenchimento :  14 px  16 px ;
+    decoração de texto : nenhuma;
+}
+
+. log_cad {
+    estilo de lista : nenhum;
+    largura :  20 % ;
+    exibição : flexível;
+    justificar-conteúdo : espaço ao redor;
+    align-items : centro;
+}
+
+. botao_log {
+    cor de fundo : transparente;
+    borda :  1 px sólido # 00AC4D ;
+    margem esquerda :  40 px ;
+    preenchimento :  0,5 rem ;
+    raio da borda :  40 px ;
+}
+
+. botao_log : hover {
+    cor de fundo :  # 00AC4D ;
+    borda :  1 px sólido # 00AC4D ;
+    margem esquerda :  40 px ;
+    preenchimento :  0,5 rem ;
+}
+
+. botao_cad {
+    fundo :  # 00AC4D ;
+    raio da borda :  40 px ;
+    preenchimento :  0,5 rem ;
+    transformar :  escala ( 1,0 );
+    transição : todos 0,5 s ;
+}
+
+. botao_cad : hover {
+    transformar :  escala ( 1,1 );
+    transição : todos 0,5 s ;
+}
