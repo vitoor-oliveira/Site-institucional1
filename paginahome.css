@@ -4,29 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
- .conatainer section{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 100px;
-    background-color: #121212;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
+body{
+    overflow-x: hidden;
 }
-
- .container .circle{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #121212;
-
-}
-
 
 .container{
     height: 100vh;
@@ -36,7 +16,6 @@
     box-sizing: border-box;
 
 }
-
 .navbar{
     width: 100%;
     background-color: black;
@@ -67,6 +46,7 @@ nav ul li{
     list-style: none;
     width: 27%;
     
+    
     display: flex;
     
     align-items: center;
@@ -78,6 +58,14 @@ nav ul li{
     padding: 0 1rem 0 1rem;
     border-radius: 40px;
 }
+
+
+.content .span2 {
+
+    text-align: center;
+    background-color: aqua;
+    display: flex;
+}
 .botao_cad {
     background:  white;
     border: 1px solid black;
@@ -85,10 +73,17 @@ nav ul li{
     transform: scale(1.0);
     transition: all 0.5s;
     border-radius: 40px;
-}
-.botao_log{
     
-    transition: all 0.5s;
+}
+.botao_cad a{
+    text-decoration: none;
+    color: black;
+}
+
+.botao_log a{
+    text-decoration: none;
+    color: black;
+    
 }
 .botao_cad:hover {
     transform: scale(1.1);
@@ -113,34 +108,39 @@ nav ul li a{
 
 
 .content{
-    position: relative;
-    margin: 10px;
+    /* position: relative; */
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+.container_direita{
+    align-items: center;
+    
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    
+}
+.container_direita{
+    
     
 }
 
+
 h1{
     text-transform: uppercase;
-    margin: 20px;
     font-weight: 800;
-    margin-top: 100px;
     letter-spacing: .1em;
     font-size: 60px;
     color: black;
-
-}
-
-p{
-    margin: 20px;
 }
 
 .btn{
     background-color: black;
     margin-top: 100px;
-    margin-left: 20px;
     padding: 15px 45px;
     text-align: center;
     border: none;
-    outline: none;
     transition: 5s;
     text-transform: uppercase;
     color: white;
@@ -154,31 +154,121 @@ p{
 }
 
 .btn:hover{
-    
-    transition: all .5s;
-}
-
-.redes-sociais{
-    margin-top: 80px;
-    margin-left: 50px;
-    font-size: 27px;
-    text-decoration: none;
+    transition: all .3s;
 }
 
 .imagem{
-    position: absolute;
-    margin: 900Xpx;
     
-    margin-left: 900px;
+    border-bottom-right-radius:  50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin: 1px;
+    background-color: black;
+    align-items: center;
+    
+    animation: trocaImagem 1s ease-in-out;
+}
+
+@keyframes trocaImagem {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+/* Historia nike */
+
+.container1{
+    height: 100vh;
+    ;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .historia .img_historia{
-    margin-top:300px ;
-} 
 
+    margin-top:70px ;
+    display: flex;
+    justify-content: space-between;
+   
+}
+ .container1 .botao_curiosidade{
+    display: flex;
+    float: right;
+
+}
+ .altera{
+     padding: 2px;
+     margin: 7px;
+     font-size: 18px; 
+     background-color: w;
+     
+   
+}
+.historia{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    /* background-color: */
+    
+}
+/* .img_historia{
+} */
 .historia .img_historia p{
     margin: 1px;
     margin-left: 530px;
+
     
 }
 
+
+.historia .conatainer{
+    border-color: #121212;
+}
+
+
+.fundadores h1{
+    background-color: aqua;
+
+
+}
+
+/* fundadores nike*/
+
+section{
+    background-color: green;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+     
+    
+
+}
+
+.wrapper{
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+}
+
+.item{
+    background-color: #f5f5f5;
+    margin: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    box-shadow: 7px 7 px 0px #121212;
+}
+
+.item h2{
+    /* background-color: ;
+    letter-spacing: ; */
+}
+
+
+/*
+OSAKWE
+*/
+
+.main-content{
+    margin: 2vh 2vw;
+}
