@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <img src="https://user-images.githubusercontent.com/46379117/192358781-9ca879e4-e55e-4d0d-b876-f9a4a2ed9ae8.png" width="600px">
 
 _Web Data Visualization = Visualização de Dados na Web_
@@ -100,3 +101,6 @@ Abaixo, uma figura que ajuda a compreender o caminho percorrido para, por exempl
 
 [1] https://datatracker.ietf.org/doc/html/rfc2396  
 [2] https://datatracker.ietf.org/doc/html/rfc7231
+=======
+# PROJETO-INDIVIDUAL
+>>>>>>> ce2c31b92c3a2adfd89acdcbf05b6b098fdb74f7
