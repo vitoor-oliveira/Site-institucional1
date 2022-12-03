@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/votacao.css">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <title>Tela de Cadastro</title>
+</head>
+    <div class="container">
+        
+        <div class="form">
+           <section class="votacao">
+
+               <div class="form-header">
+                   <div class="title">
+                       <h1> Escolha o Tênis que você mais gostou</h1>
+                    </div>
+                    <div class="login-button">
+                        
+                        <button><a href="index.html">Inicio</a></button>
+                    </div>
+                </div>
+                <select id="votacao">
+                    <option value="1">Air Force 1</option>
+                    <option value="2">Jordan 1</option>
+                    <option value="3">Air Max 90</option>
+                    <option value="4">Jordan 4</option>
+                    <option value="5">Nike Dunk</option>
+                    <option value="6">Air Max 95</option>
+                    <option value="7">Nike VaporMax</option> 
+                    <option value="8">Nike Air Max Plus</option>
+                    <option value="9">Nike Shox</option>
+
+
+
+
+                </select>
+
+               <div class="votar">
+                
+                 <button onclick="Votar()">Votar</button>
+                </div> 
+
+                    
+                </div>
+            </section>
+
+            <div class="container_resultado">
+                
+                 <div id="resultado" class="tenisvotado">
+                    <!-- <img id="imagemtenis" src="">
+                    <p id="nomeTenis">Nome tenis</p>
+                    <p id="qtdVoto">10</p>
+                    -->
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function Votar() {
+        var voto = votacao.value
+
+        var usuario =  sessionStorage.getItem("ID_USUARIO")
+        fetch("/usuarios/Votar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                voto,
+                usuario
+            })
+        }).then(function(resposta){
+            if(resposta.ok){
+                alert("Sucesso")
+                resultadoTenis()
+            }
+        })
+    }
+ 
+    function resultadoTenis() {
+        fetch("/usuarios/resultadoTenis").then(function(resposta){
+            if(resposta.ok){
+                resposta.json().then(function(response){
+                    console.log(response)
+                    resultado.innerHTML = ''
+
+                    for(var i = 0; i < response.length; i++){
+                        resultado.innerHTML += `
+                         
+                            <img id="imagemtenis" width="120px" src="${response[i].imagem}">
+                            <p id="nomeTenis">${response[i].nome}</p>
+                            <p id="qtdVoto">${response[i].votos}</p>
+                       
+                        `
+                    }
+
+                })
+            }
+        })
+    }
+</script>

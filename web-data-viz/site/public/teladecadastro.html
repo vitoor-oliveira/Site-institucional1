@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/teladecastronova.css">
+
+    <title>Tela de Cadastro</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-image">
+            <img src="./assets/logo nike laranja.jpg" alt="">
+        </div>
+        <div class="form">
+            <div action="teladeloginnova.html">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se </h1>
+                    </div>
+                    <div class="login-button">
+                        
+                        <button><a href="index.html">Inicio</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primeiro nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" >
+                    </div> 
+
+                    <div class="input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu Sobrenome" >
+                    </div> 
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email">
+                    </div> 
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx">
+                    </div> 
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha">
+                    </div> 
+
+                    <div class="input-box">
+                        <label for="Confirmpassword">Confirme sua senha</label>
+                        <input id="Confirmpassword" type="password" name="confirmpassword" placeholder="Digite sua senha">
+                    </div> 
+
+                    <div class="continue-button">
+                        <button onclick="cadastrar()">Cadastrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
+<script>
+        function cadastrar() {
+        
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = firstname.value;
+        var sobrenomeVar = lastname.value
+        var emailVar = email.value;
+        var numeroVar = number.value
+        var senhaVar = password.value;
+        var confirmacaoSenhaVar = Confirmpassword.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == ""  || numeroVar == "" || sobrenomeVar == ""  ) {
+            alert("Preencha todos os Campos")
+            return false;
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                emailServer: emailVar,
+                numeroServer: numeroVar,
+                senhaServer: senhaVar,
+                
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                
+
+                setTimeout(() => {
+                    window.location = "teladeloginnova.html";
+                }, 2000);
+                
+               
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        
+        });
+
+        return false;
+    }
+</script>

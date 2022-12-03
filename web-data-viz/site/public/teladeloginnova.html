@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./css/teladelogin.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="./assets/force teladelogin.jpeg" alt="">
+        </div>
+        <div class="form">
+            <div action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>LOGIN</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="teladecadastro.html">Não tem uma conta?</a></button>
+                    </div>
+                </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email">
+                    </div> 
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha">
+                    </div> 
+
+                  
+
+                    <div class="continue-button">
+                        <button onclick="entrar()">Entrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     function entrar() {
+       
+
+        var emailVar = email.value;
+        var senhaVar = password.value;
+        
+
+
+        if (emailVar == "" || senhaVar == ""  ) {
+            
+            return false;
+        }
+        
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idusuario;
+
+                    setTimeout(function () {
+                        window.location = "./votacao.html"; //Caminho dps de logar
+                    }, 1000); // apenas para exibir o loading
+                });
+                
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                alert("Email ou senha inválidos")
+                resposta.text().then(texto => {
+                    console.error(texto);
+                   
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>

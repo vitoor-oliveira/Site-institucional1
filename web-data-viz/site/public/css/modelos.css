@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: #a0a2a2;
+}
+h1{  
+    display: flex;
+    justify-content: center;
+    margin: 6rem 0 6rem 0;
+    color:  #a0a2a2;
+    font-size: 40px;
+    background-color: white;
+
+}
+
+.botao_voltar img{
+  height: 65px;
+}
+
+.botao_voltar{
+    
+    align-items: center;
+    position: fixed;
+    margin: 1% 90% 0 2%;
+    z-index: 1;
+    width: min-content;
+}
+
+
+.card .user{
+    width: 100px;
+}
+
+.cards .card img {
+    
+    width: 65%;
+    
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-gap: 45px;
+    
+}
+.card{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px 40px;
+    box-shadow: 8px 8px 10px rgba(49, 1, 1, 0.377);
+    border-radius: 9px;
+}
+
+/* .card .info{
+    opacity: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.459);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease;
+}
+.card:hover .info{
+    opacity: 1;
+} */
+
+p{
+ text-align: center;
+    font-size: 18px;
+    
+}
