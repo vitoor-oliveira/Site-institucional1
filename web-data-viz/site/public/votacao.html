@@ -9,21 +9,25 @@
 </head>
 <body>
     
-    <title>Tela de Cadastro</title>
+    
 </head>
-    <div class="container">
+
+<div class="container">
         
         <div class="form">
-           <section class="votacao">
-
+            <section class="votacao">
+                <div class="login-button">
+                            
+                    <button><a href="index.html">Inicio</a></button>
+                </div>
+                <div class="title">
+                   <h1> Escolha o Tênis que você mais gostou</h1>
+                   <!-- <div class="login-button">
+                       
+                       <button><a href="index.html">Inicio</a></button>
+                   </div> -->
+                </div>
                <div class="form-header">
-                   <div class="title">
-                       <h1> Escolha o Tênis que você mais gostou</h1>
-                    </div>
-                    <div class="login-button">
-                        
-                        <button><a href="index.html">Inicio</a></button>
-                    </div>
                 </div>
                 <select id="votacao">
                     <option value="1">Air Force 1</option>
@@ -35,17 +39,17 @@
                     <option value="7">Nike VaporMax</option> 
                     <option value="8">Nike Air Max Plus</option>
                     <option value="9">Nike Shox</option>
-
+                    
 
 
 
                 </select>
-
-               <div class="votar">
-                
-                 <button onclick="Votar()">Votar</button>
+                </a> 
+                <div class="votar">
+                 
+                    <button onclick="Votar()">Votar</button>
                 </div> 
-
+                
                     
                 </div>
             </section>
@@ -79,7 +83,7 @@
             })
         }).then(function(resposta){
             if(resposta.ok){
-                alert("Sucesso")
+                alert("Voto realizado com sucesso")
                 resultadoTenis()
             }
         })
@@ -95,7 +99,7 @@
                     for(var i = 0; i < response.length; i++){
                         resultado.innerHTML += `
                          
-                            <img id="imagemtenis" width="120px" src="${response[i].imagem}">
+                            <img id="imagemtenis" width="130px" src="${response[i].imagem}">
                             <p id="nomeTenis">${response[i].nome}</p>
                             <p id="qtdVoto">${response[i].votos}</p>
                        
